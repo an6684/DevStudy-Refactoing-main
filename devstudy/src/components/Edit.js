@@ -66,6 +66,8 @@ function Edit({ storageData }) {
       localStorage.removeItem(selectedTitle)
       localStorage.setItem(inputTitle, JSON.stringify(updatedOption));
       alert("데이터가 수정되었습니다.");
+      
+      //한 번 더 수정시 오류 방지
       setSelectedTitle(inputTitle);
     }
   };
