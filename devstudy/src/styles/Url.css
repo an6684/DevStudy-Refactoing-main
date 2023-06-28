@@ -1,0 +1,64 @@
+/* #url {
+    width: 98%;
+    margin: 0 auto;
+    text-align: center;
+}
+#main-url {
+    width: 98%;
+    height: 780px;
+    margin: 3% 0 0 0;
+} */
+#contents {
+    padding: 0 3%;
+}
+#contents h3 {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+}
+#contents p {
+    width: 70%;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 7px;
+    padding-left: 4px;
+}
+/* .card {
+    margin: 0 auto;
+    width: 90%;
+    height: 260px;
+    background-color: white;
+    border: 1px solid #b0b0b0;
+    border-radius: 20px;
+    transition: ease-in-out 0.3s;
+    margin-bottom: 3.5%;
+    position: relative;
+}
+.card a {
+    width: 100%;
+    color: black;
+    display: flex;
+    position: absolute;
+    top: 13%;
+} */
+/* embed {
+    width: 43%;
+    height: 197px;
+    margin-left: 5%;
+} */
+.contents-box {
+    margin-left: 15px;
+}
+#heart{
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    border-style: none;
+    background-color: transparent;
+    color: #ee1d52;
+    cursor: pointer;
+}
+.heart-icon.filled{
+    color: #ee1d52;
+    /* background-color: #ee1d52; */
+}
