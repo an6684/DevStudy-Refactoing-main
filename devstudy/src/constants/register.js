@@ -25,7 +25,7 @@ export const useRegisterState=()=>{
                 isCartState:isCartState,
             };
 
-            localStorage.setItem(localStorage.length,JSON.stringify(obj));
+            localStorage.setItem(title,JSON.stringify(obj));
     
             setSubject('Html/css');
             setTitle('');

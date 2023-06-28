@@ -2,6 +2,7 @@ import { useState } from "react";
 import '../styles/ManagerMode.css';
 import Edit from "../components/Edit";
 import { useLocalStorageData } from "../constants/useLocalStorageData";
+import Delete from "../components/Delete";
 
 function ManagerMode(){
     const [activeTab,setActiveTab]=useState(0);
@@ -13,8 +14,6 @@ function ManagerMode(){
         {label:'Delete',index:1},
     ];
     const storageData=useLocalStorageData();
-    console.log(storageData)
-    console.log(storageData[0])
 
     return(
         <>
@@ -32,7 +31,7 @@ function ManagerMode(){
                 </div>
                 <div className="tab-content">
                     {activeTab===0&&<Edit storageData={storageData}/>}
-                    {activeTab===1&&<p>Delete컴포넌트 들어올 곳</p>}
+                    {activeTab===1&&<Delete storageData={storageData}/>}
                 </div>
             </article>
         </>

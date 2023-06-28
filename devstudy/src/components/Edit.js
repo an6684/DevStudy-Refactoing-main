@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function Edit({ storageData }) {
   const [selectedSubject, setSelectedSubject] = useState("");
   const [selectedTitle, setSelectedTitle] = useState("");
+  const [inputTitle, setInputTitle] = useState("");
   const [selectedContent, setSelectedContent] = useState("");
   const [selectedUrl, setSelectedUrl] = useState("");
   const uniqueSubjects = [...new Set(storageData.map((data) => data.subject))];
@@ -10,7 +11,6 @@ function Edit({ storageData }) {
   
   // 선택한 과목에 따라 옵션을 필터링
   const filteredOptions = storageData.filter((data) => data.subject === selectedSubject);
-
   // 과목 선택 처리
   const handleSubjectChange = (e) => {
     setSelectedSubject(e.target.value);
@@ -18,13 +18,15 @@ function Edit({ storageData }) {
     setSelectedContent("");
     setSelectedUrl("");
   };
-
+  let selectedOption;
   // 옵션 선택 처리
   const handleOptionChange = (e) => {
-    const selectedOption = filteredOptions.find((data) => data.title === e.target.value);
+    selectedOption = filteredOptions.find((data) => data.title === e.target.value);
+    console.log(selectedOption)
     if (selectedOption) {
       setSelectedCartState(selectedOption.isCartState);
       setSelectedTitle(selectedOption.title);
+      setInputTitle(selectedOption.title)
       setSelectedContent(selectedOption.content);
       setSelectedUrl(selectedOption.url);
     } else {
@@ -32,18 +34,20 @@ function Edit({ storageData }) {
       setSelectedContent("");
       setSelectedUrl("");
     }
-    console.log(selectedOption.isCartState)
   };
 
   // 제목 변경 처리
   const handleTitleChange = (e) => {
-    setSelectedTitle(e.target.value);
+    setInputTitle(e.target.value);
+    console.log(inputTitle)
+    console.log(selectedContent)
   };
+
 
   // 폼 제출 처리
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(selectedTitle===''){
+    if(inputTitle===''){
       alert('제목을 입력하세요.');
     }else if(selectedContent===''){
         alert('컨텐츠를 입력하세요.')
@@ -53,25 +57,16 @@ function Edit({ storageData }) {
       // 변경된 데이터로 선택한 옵션 업데이트
       const updatedOption = {
         subject: selectedSubject,
-        title: selectedTitle,
+        title: inputTitle,
         content: selectedContent,
         url: selectedUrl,
         isCartState: selectedCartState, 
       };
-
-      // storageData에서 선택한 옵션의 인덱스 찾기
-      const selectedIndex = storageData.findIndex((data) => data.title === selectedTitle);
-
-      if (selectedIndex !== -1) {
-        // storageData에서 선택한 옵션 업데이트
-        storageData[selectedIndex] = updatedOption;
-
-        localStorage.setItem(selectedIndex, JSON.stringify(updatedOption));
-
-        alert("데이터가 수정되었습니다.");
-      } else {
-        alert("선택된 옵션이 없습니다.");
-      }
+      
+      localStorage.removeItem(selectedTitle)
+      localStorage.setItem(inputTitle, JSON.stringify(updatedOption));
+      alert("데이터가 수정되었습니다.");
+      setSelectedTitle(inputTitle);
     }
   };
 
@@ -103,7 +98,7 @@ function Edit({ storageData }) {
             <input
               type="text"
               placeholder="Title"
-              value={selectedTitle}
+              value={inputTitle}
               onChange={handleTitleChange}
             />
           </article>
