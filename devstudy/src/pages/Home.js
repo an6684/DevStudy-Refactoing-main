@@ -5,12 +5,8 @@ import '../styles/Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
-function Home(){
+function Home({moveToTop}){
     const filteredDatas=datas.filter(data=>data.id<=5);
-    const moveToTop = () => {
-        // top:0 >> 맨위로  behavior:smooth >> 부드럽게 이동할수 있게 설정하는 속성
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
 
     return(
         <>

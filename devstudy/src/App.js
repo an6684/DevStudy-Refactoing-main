@@ -7,7 +7,10 @@ import Avi from './pages/Avi';
 import Data from './components/Data';
 
 function App() {
-
+  const moveToTop = () => {
+    // top:0 >> 맨위로  behavior:smooth >> 부드럽게 이동할수 있게 설정하는 속성
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
     <div className="App">
       <NavLink to="/" className='main'><h1>DevStudy</h1></NavLink>
@@ -20,9 +23,9 @@ function App() {
       </ul>
       
       <Routes>
-        <Route exact path="/" element={ <Home/> } />
-        <Route path={"/datas/:dataId"} element={<Data/>} />
-        <Route path="/avi" element={<Avi/>} />
+        <Route exact path="/" element={ <Home moveToTop={moveToTop}/> } />
+        <Route path={"/datas/:dataId"} element={<Data moveToTop={moveToTop}/>} />
+        <Route path="/avi" element={<Avi moveToTop={moveToTop}/>} />
       </Routes>
 
     </div>
