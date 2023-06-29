@@ -19,6 +19,8 @@ function RegisterClass(){
     return(
         <>
             <div className="register-wrap">
+                <div id="border-top"></div>
+                <h2>Register Class</h2>
                 <article>
                     <select value={subject} onChange={e=>setSubject(e.target.value)}>
                         {filteredDatas.map(data=>(

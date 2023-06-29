@@ -19,7 +19,7 @@ const Data=({moveToTop})=>{
       <>
         <div className="data-wrap">
           <section key={data.id}>
-              <h3 key={data.id} value={data.title}>
+              <h3 key={data.id} value={data.title} className={data.title}>
                   {data.title}
               </h3>
               <div className="wrap">

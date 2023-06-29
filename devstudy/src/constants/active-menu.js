@@ -1,5 +1,5 @@
 const activeStyle = {
-    color: 'black',
+    color: '#686461',
 }
 const deactiveStyle = {
     color: '#898989',

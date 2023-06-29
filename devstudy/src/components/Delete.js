@@ -29,38 +29,42 @@ function Delete({storageData}){
     // 폼 제출 처리
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(window.confirm('해당 데이터를 삭제하시겠습니까?')){
-            localStorage.removeItem(selectedTitle)
-            alert("데이터가 삭제되었습니다.");
+        if(selectedOption==null){
+            alert("옵션을 선택해주세요.");
+        }else{
+            if(window.confirm('해당 데이터를 삭제하시겠습니까?')){
+                localStorage.removeItem(selectedTitle)
+                alert("데이터가 삭제되었습니다.");
+            }
         }
     };
 
     return(
         <>
-        <div className="edit-wrap">
+        <div className="delete-wrap">
             <form onSubmit={handleSubmit}>
-            <article>
-                <select value={selectedSubject} onChange={handleSubjectChange}>
-                <option value="">-- 과목 선택 --</option>
-                {filteredDatas.map((subject) => (
-                    <option key={subject.id} value={subject.title}>
-                    {subject.title}
-                    </option>
-                ))}
-                </select>
-            </article>
-            <article>
-                <select value={selectedTitle} onInput={handleOptionChange}>
-                <option value="">-- 제목 선택 --</option>
-                {filteredOptions.map((data) => (
-                    <option key={data.title} value={data.title}>
-                    {data.title}
-                    </option>
-                ))}
-                </select>
-            </article>
-            <button type="submit">Delete</button>
+                <article>
+                    <select value={selectedSubject} onChange={handleSubjectChange}>
+                        <option className="opt-subject">---------------------- 과목 선택 ----------------------</option>
+                        {filteredDatas.map((subject) => (
+                            <option key={subject.id} value={subject.title}>
+                            {subject.title}
+                            </option>
+                        ))}
+                    </select>
+                </article>
+                <article>
+                    <select value={selectedTitle} onInput={handleOptionChange}>
+                        <option className="opt-title">---------------------- 제목 선택 ----------------------</option>
+                        {filteredOptions.map((data) => (
+                            <option key={data.title} value={data.title}>
+                            {data.title}
+                            </option>
+                        ))}
+                    </select>
+                </article>
             </form>
+            <button type="submit" id="delete-btn">Delete</button>
         </div>
     </>
     )

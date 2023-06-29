@@ -1,6 +1,74 @@
-#submit-btn{
-    cursor: pointer;
+.register-wrap{
+    width: 60%;
+    height: 750px;
+    margin: 1% auto 0 auto;
+    background-color: white;
+    border: 1px solid whitesmoke;
+    box-shadow: 0 19px 38px rgba(99, 98, 98, 0.1),
+        0 15px 12px rgba(99, 98, 98, 0.1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 .register-wrap>article{
     display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 55px;
 }
+.RegisterClass{
+    display: none;
+}
+h2{
+    text-align: center;
+    margin: 5% 0 7% 0;
+    font-size: 3.5rem;
+    color: #898989;
+}
+select,
+input,
+textarea {
+    display: inline-block;
+    width: 65%;
+    height: 50px;
+    font-size: 1.2rem;
+    padding: 5px 0 5px 3px;
+}
+input::placeholder {
+    padding: 5px 0 5px 3px;
+}
+textarea::placeholder {
+    padding: 3px 0 3px 3px;
+}
+#bottom {
+    width: 65%;
+    margin: -25px auto 0 auto;
+    text-align: right;
+}
+#border-top {
+    height: 10px;
+    background-color: #787878;
+}
+#submit-btn {
+    width: 130px;
+    height: 50px;
+    background-color: #898989;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px solid #898989;
+    cursor: pointer;
+}
+#submit-btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #898989;
+    border: 2px solid #898989;
+    transition: 0.2s;
+}
+textarea {
+    resize: none;
+}
+

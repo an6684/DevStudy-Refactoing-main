@@ -17,23 +17,29 @@ function ManagerMode(){
 
     return(
         <>
-            <article className="tab-box">
-                <div className="label-wrap">
-                    {tabs.map((tab)=>(
-                        <div 
-                            key={tab.index}
-                            className={`tab ${activeTab===tab.index?'active':''}`}
-                            onClick={()=>handleTabClick(tab.index)}
-                        >
-                            {tab.label}
+            <div className="manager-wrap">
+                <div id="border-top"></div>
+                <h2>Manager Mode</h2>
+                <section id="content-box">
+                    <article className="tab-box">
+                        <div className="label-wrap">
+                            {tabs.map((tab)=>(
+                                <div 
+                                    key={tab.index}
+                                    className={`tab ${activeTab===tab.index?'active-tab':''}`}
+                                    onClick={()=>handleTabClick(tab.index)}
+                                >
+                                    <p>{tab.label}</p>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
-                <div className="tab-content">
-                    {activeTab===0&&<Edit storageData={storageData}/>}
-                    {activeTab===1&&<Delete storageData={storageData}/>}
-                </div>
-            </article>
+                        <div className="tab-content">
+                            {activeTab===0&&<Edit storageData={storageData}/>}
+                            {activeTab===1&&<Delete storageData={storageData}/>}
+                        </div>
+                    </article>
+                </section>
+            </div>
         </>
     )
 }
