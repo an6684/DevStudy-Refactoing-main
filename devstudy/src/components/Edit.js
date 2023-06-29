@@ -121,8 +121,8 @@ function Edit({ storageData }) {
               onChange={(e) => setSelectedUrl(e.target.value)}
             />
           </article>
+          <button type="submit" id="edit-btn">Edit</button>
         </form>
-        <button type="submit" id="edit-btn">Edit</button>
       </div>
     </>
   );

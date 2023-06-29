@@ -50,6 +50,12 @@
     color: white;
     border: 2px solid #898989;
 }
+.active-tab:hover{
+    background-color: white;
+    color: #898989;
+    border: 2px solid white;
+    transition: 0.2s;
+}
 .tab-content{
     width: 100%;
     text-align: center;

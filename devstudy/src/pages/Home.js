@@ -1,13 +1,14 @@
+import React, { useState } from "react";
 import datas from "../components/datas";
 import Card from "../components/Card";
 import '../styles/App.css';
 import '../styles/Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { useLocalStorageData } from '../constants/useLocalStorageData';
 
 function Home({moveToTop}){
     const filteredDatas=datas.filter(data=>data.id<=5);
-
     return(
         <>
             <div className="home-wrap">
@@ -17,7 +18,7 @@ function Home({moveToTop}){
                             {data.title}
                         </h3>
                         <div className="wrap">
-                            <Card subject={data.title}/>
+                            <Card subject={data.title} />
                         </div>
                     </section>
                 ))}

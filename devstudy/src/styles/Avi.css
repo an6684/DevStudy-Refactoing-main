@@ -1,7 +1,6 @@
 .avi-wrap {
     width: 60%;
     height: 920px;
-    /* margin: 0 auto; */
     background-color: white;
     border: 1px solid whitesmoke;
     box-shadow: 0 19px 38px rgba(99, 98, 98, 0.1),
@@ -27,10 +26,11 @@
 #contents {
     padding: 0 3%;
 }
-#contents h3 {
+#contents .avi-title {
     color: black;
     font-size: 25px;
     font-weight: bold;
+    margin-top: 5px;
 }
 #contents p {
     width: 70%;
@@ -39,7 +39,7 @@
     margin-top: 7px;
     padding-left: 4px;
 }
-/*.card {
+.list-card {
     margin: 0 auto;
     width: 90%;
     height: 260px;
@@ -50,18 +50,18 @@
     margin-bottom: 3.5%;
     position: relative;
 }
-.card a {
+.list-card a {
     width: 100%;
     color: black;
     display: flex;
     position: absolute;
-    top: 13%;
+    top: 2%;
 }
-embed {
+.list-card embed {
     width: 43%;
-    height: 197px;
+    height: 215px;
     margin-left: 5%;
-}*/
+}
 .contents-box {
     margin-left: 15px;
 } 
@@ -69,10 +69,12 @@ embed {
     display: flex;
     justify-content: center;
     margin-top: 1%;
+    width: 100%;
+    margin: 0 auto;
 }
 #avi-list {
-    margin-right: 30px;
-    width: 30%;
+    margin: 0 auto 10px auto;
+    width: 40%;
     height: 920px;
     background-color: white;
     border: 1px solid whitesmoke;
@@ -110,36 +112,38 @@ span {
     margin: 6% auto 3% auto;
     padding: 0 5px 0 16px;
 }
-/* .title {
+.list-card .title {
+    width: 205px;
     font-size: 20px;
     font-weight: bold;
     padding: 0 4px;
-    margin: 5px 0;
+    margin: 25px 0;
 }
-.content {
+.list-card .content {
+    width: 180px;
     font-size: 15px;
-    padding: 0 5px;
 }
-.card:hover {
+
+#contents > div {
+    position: relative;
+}
+.list-card:hover {
     border: 2px solid #979797;
     cursor: pointer;
     transform: scale(1.02);
 }
-.card a:hover {
+.list-card a:hover {
     cursor: pointer;
-} */
-#contents > div {
-    position: relative;
 }
-/* #heart {
+.list-card.highlight {
+    background-color: #ddd;
+}
+#heart {
     border-style: none;
     background-color: transparent;
-    font-size: 25px;
+    font-size: 35px;
     position: absolute;
-    right: 0;
-    bottom: 20px;
+    right: 25px;
+    bottom: 25px;
     cursor: pointer;
 }
-#heart i {
-    color: #ee1d52;
-} */

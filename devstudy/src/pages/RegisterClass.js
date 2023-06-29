@@ -37,7 +37,7 @@ function RegisterClass(){
                     <textarea id="content" name="title" placeholder="Content" value={content} onChange={e=>setContent(e.target.value)}></textarea>
                 </article>
                 <article>
-                    <input id="url" type="text" placeholder="URL" value={url} onChange={e=>setUrl(e.target.value)}/>
+                    <input type="text" placeholder="URL" value={url} onChange={e=>setUrl(e.target.value)}/>
                 </article>
                 <div id="bottom">
                     <button id="submit-btn" onClick={handleSubmit}>submit</button>
