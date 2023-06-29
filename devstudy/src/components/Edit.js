@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import datas from "../components/datas";
 
 function Edit({ storageData }) {
   const [selectedSubject, setSelectedSubject] = useState("");
@@ -6,8 +7,9 @@ function Edit({ storageData }) {
   const [inputTitle, setInputTitle] = useState("");
   const [selectedContent, setSelectedContent] = useState("");
   const [selectedUrl, setSelectedUrl] = useState("");
-  const uniqueSubjects = [...new Set(storageData.map((data) => data.subject))];
   const [selectedCartState, setSelectedCartState] = useState("");
+  const filteredDatas=datas.filter(data=>data.id<=5);
+
   
   // 선택한 과목에 따라 옵션을 필터링
   const filteredOptions = storageData.filter((data) => data.subject === selectedSubject);
@@ -79,9 +81,9 @@ function Edit({ storageData }) {
           <article>
             <select value={selectedSubject} onChange={handleSubjectChange}>
               <option value="">-- 과목 선택 --</option>
-              {uniqueSubjects.map((subject) => (
-                <option key={subject} value={subject}>
-                  {subject}
+              {filteredDatas.map((subject) => (
+                <option key={subject.id} value={subject.title}>
+                  {subject.title}
                 </option>
               ))}
             </select>

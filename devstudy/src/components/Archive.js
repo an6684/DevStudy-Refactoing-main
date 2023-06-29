@@ -1,6 +1,6 @@
 import { useLocalStorageData } from '../constants/useLocalStorageData';
 import { Link } from 'react-router-dom';
-import '../styles/Card.css';
+// import '../styles/Card.css';
 
 const Archive=()=>{
     const card=useLocalStorageData();

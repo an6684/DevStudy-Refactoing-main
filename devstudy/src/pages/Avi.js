@@ -22,7 +22,7 @@ function Avi(){
     return(
         <>
             <div id="avi-box">
-                <div className="wrap">
+                <div className="avi-wrap">
                     <div className="boerder-top"></div>
                     <Url/>
                 </div>

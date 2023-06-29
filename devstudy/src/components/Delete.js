@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import datas from "../components/datas";
+
 
 function Delete({storageData}){
     const [selectedSubject, setSelectedSubject] = useState("");
     const [selectedTitle, setSelectedTitle] = useState("");
-    const uniqueSubjects = [...new Set(storageData.map((data) => data.subject))];
+    const filteredDatas=datas.filter(data=>data.id<=5);
 
     // 선택한 과목에 따라 옵션을 필터링
     const filteredOptions = storageData.filter((data) => data.subject === selectedSubject);
@@ -19,10 +21,10 @@ function Delete({storageData}){
     console.log(selectedOption)
     if (selectedOption) {
         setSelectedTitle(selectedOption.title);
-    } else {
-        setSelectedTitle("");
-    }
-};
+        } else {
+            setSelectedTitle("");
+        }
+    };
 
     // 폼 제출 처리
     const handleSubmit = (e) => {
@@ -40,15 +42,15 @@ function Delete({storageData}){
             <article>
                 <select value={selectedSubject} onChange={handleSubjectChange}>
                 <option value="">-- 과목 선택 --</option>
-                {uniqueSubjects.map((subject) => (
-                    <option key={subject} value={subject}>
-                    {subject}
+                {filteredDatas.map((subject) => (
+                    <option key={subject.id} value={subject.title}>
+                    {subject.title}
                     </option>
                 ))}
                 </select>
             </article>
             <article>
-                <select value={selectedTitle} onChange={handleOptionChange}>
+                <select value={selectedTitle} onInput={handleOptionChange}>
                 <option value="">-- 제목 선택 --</option>
                 {filteredOptions.map((data) => (
                     <option key={data.title} value={data.title}>

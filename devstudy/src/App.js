@@ -24,7 +24,7 @@ function App() {
         <Route path={"/datas/:dataId"} element={<Data/>} />
         <Route path="/avi" element={<Avi/>} />
       </Routes>
-      
+
     </div>
   );
 }
