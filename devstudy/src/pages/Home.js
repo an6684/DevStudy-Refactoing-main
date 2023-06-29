@@ -5,7 +5,6 @@ import '../styles/App.css';
 import '../styles/Home.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import { useLocalStorageData } from '../constants/useLocalStorageData';
 
 function Home({moveToTop}){
     const filteredDatas=datas.filter(data=>data.id<=5);

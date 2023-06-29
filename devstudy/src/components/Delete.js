@@ -29,7 +29,7 @@ function Delete({storageData}){
     // 폼 제출 처리
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(selectedOption==''){
+        if(selectedTitle===''){
             alert("옵션을 선택해주세요.");
         }else{
             if(window.confirm('해당 데이터를 삭제하시겠습니까?')){
