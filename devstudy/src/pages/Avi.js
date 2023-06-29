@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import Url from '../components/Url';
 import Card from '../components/Card';
 import { useLocalStorageData } from '../constants/useLocalStorageData';
+import '../styles/Avi.css'
 
 
 function Avi(){
@@ -23,11 +24,11 @@ function Avi(){
         <>
             <div id="avi-box">
                 <div className="avi-wrap">
-                    <div className="boerder-top"></div>
+                    <div className="border-top"></div>
                     <Url/>
                 </div>
                 <div id="avi-list">
-                    <div className="boerder-top"></div>
+                    <div className="border-top"></div>
                     <div id="scroll-box">
                         <div id="list-box">
                             {/* {filteredCards.map(card => (
