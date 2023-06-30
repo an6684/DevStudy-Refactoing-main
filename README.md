@@ -15,6 +15,6 @@
 </p>
   
   **DevStuey 홈페이지**
-  : <a href="https://an6684.github.io/DevStudyProject-main/">https://an6684.github.io/DevStudyProject-main/</a>
+  : <a href="https://an6684.github.io/DevStudyProject-main/">https://an6684.github.io</a>
 </div>
 
