@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-// import '../styles/Card.css';
 import { useLocalStorageData } from '../constants/useLocalStorageData';
 
 function Card({subject}){
